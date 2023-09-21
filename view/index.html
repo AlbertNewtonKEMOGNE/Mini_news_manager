@@ -1,0 +1,112 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic News</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="load()">
+
+    <div class="header_text">
+        <h1>Welcome in Basic News...</h1>
+        <h4>A basic system managing news and their authors.</h4>
+    </div>
+    <div class="searcher">
+        <h2>Search for a subject of news or an author here...</h2>
+        <div class="searcher_inputs">
+            <input type="search" name="" id="user_text" placeholder="find something...">
+            <input type="submit" value="search" id="search_btn">
+        </div>
+    </div>
+    <div class="admin_section">
+        <div class="body_news">
+            <h3>Principal action: add news</h3>
+            <div class="add_news_section">
+                <h3>News id : </h3>
+                <input type="number" name="" id="id_news" placeholder="news id">
+                <h3>Title : </h3>
+                <input type="text" name="" id="title" placeholder="news title">
+                <h3>Content : </h3>
+                <textarea name="" id="content" cols="25" rows="5" placeholder="news content"></textarea>
+                <h3>Author : </h3>
+                <select name="" id="author" class="select_options">
+                    <option value="-1">Select author name</option>
+                </select><br>
+                <input type="button" value=" + Add News" id="add_news_btn">
+                <!--<input type="button" value=" Cancel" id="cancel_news_btn">-->
+            </div>
+
+        </div>
+        <div class="news_list_section">
+            <table id="news_list_table">
+                <thead>
+                    <tr>
+                        <th colspan="5">
+                            <h2>All news</h2>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Id</th>
+                        <th>Title</th>
+                        <th class="news_list_content">Content</th>
+                        <th>Author</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="news_list_table_body">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="actions_section">
+        <div class="go_to_admin">
+            <h5 class="go_to_admin_text" id="go_to_admin_text">For more actions ( create, read, update, delete news, authors and published news ), view it as admin</h5>
+            <input type="button" value=" View as admin " id="go_to_admin_btn" class="go_to_admin_btn" onclick="go_to_admin_btn()">
+        </div>
+    </div>
+    <div class="recents_news">
+
+        <!--<div class="news_card">
+            <input type="hidden" name="" id="news_id">
+            <div class="news_header">
+                <h1>News type</h1>
+                <input type="button" title="Read more on this..." value="News title">
+            </div>
+            <p>News content : Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt ex deserunt ea voluptatum totam culpa veritatis corporis harum, inventore reiciendis adipisci sint recusandae cupiditate quos facilis perspiciatis tempora quia!
+                Corporis?
+            </p>
+        </div>-->
+        <div class="more_news">
+            <input type="button" title="View more published news..." value=" + view more " class="more_news_btn">
+        </div>
+    </div>
+
+    <div class="popup">
+        <img id="ref_img" src="./asset/img/admin.png">
+        <h2 id="message">View as admin !</h2>
+        <p id="message_details">Details about your account...</p>
+        <input type="text" id="admin_login" required placeholder="login"><br>
+        <input type="password" id="admin_password" required placeholder="password">
+        <button type="button" id="pop_btn" onclick="admin_btn()">Login</button>
+        <button type="button" id="danger_popup_btn" onclick="pop_btn()">Cancel</button>
+    </div>
+    <div class="show_news_content">
+        <h2 id="news_title_message">Title</h2>
+        <h2 id="news_author_message">Author</h2>
+        <p id="news_content_message">News content</p><br>
+        <h3 id="news_publish_message">Title</h3>
+        <h3 id="news_update_message">Author</h3>
+        <button type="button" id="danger_popup_btn" onclick="content_btn()">Close</button>
+    </div>
+    <script src="../controller/script.js "></script>
+    <script src="../controller/index.js "></script>
+    <script src="../controller/jquery-3.6.0.js "></script>
+</body>
+
+</html>
+
+</html>
